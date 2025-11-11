@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar IPAS Kelas 6 Seru!</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan font Inter sebagai font default */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Efek gradien pelangi untuk teks judul */
+        .gradient-text {
+            background-image: linear-gradient(to_right, #3b82f6, #16a34a, #f97316, #dc2626);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-sky-50">
+
+    <!-- ===== MENU NAVIGASI YANG DIPERBARUI ===== -->
+    <nav class="bg-white shadow-md w-full sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                
+                <!-- Logo/Brand -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">
+                        Kelas 6
+                    </a>
+                </div>
+                
+                <!-- Menu Desktop (Telah Diperbarui) -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-3 lg:space-x-4">
+                        <!-- Setiap link kini adalah "kotak" berwarna -->
+                        <a href="#" class="text-white bg-blue-500 px-3 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-blue-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Matematika</a>
+                        <a href="#" class="text-white bg-red-500 px-3 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-red-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Bahasa Indonesia</a>
+                        <a href="#" class="text-white bg-green-500 px-3 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Bahasa Inggris</a>
+                        <a href="#" class="text-white bg-yellow-500 px-3 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Pendidikan Pancasila</a>
+                        <a href="#" class="text-white bg-pink-500 px-3 py-2 rounded-lg text-sm font-medium shadow-md hover:bg-pink-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">Seni Budaya</a>
+                        
+                        <!-- Link Aktif (Halaman Saat Ini) - Dibuat menonjol -->
+                        <a href="index.html" class="text-white bg-purple-600 px-3 py-2 rounded-lg text-sm font-medium shadow-lg ring-4 ring-purple-300 ring-offset-2 transition-all duration-200" aria-current="page">IPAS</a>
+                        
+                    </div>
+                </div>
+                
+                <!-- Tombol Menu Mobile (Tampil di mobile) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Buka menu</span>
+                        <!-- Ikon Hamburger (tampil saat menu tertutup) -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Ikon Close/X (tampil saat menu terbuka) -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Dropdown Mobile (Telah Diperbarui dengan aksen warna) -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+                <!-- Aksen warna di sebelah kiri -->
+                <a href="#" class="text-gray-700 hover:bg-blue-100 border-l-4 border-blue-500 block pl-3 pr-4 py-2 text-base font-medium transition-colors duration-200">Matematika</a>
+                <a href="#" class="text-gray-700 hover:bg-red-100 border-l-4 border-red-500 block pl-3 pr-4 py-2 text-base font-medium transition-colors duration-200">Bahasa Indonesia</a>
+                <!-- (Typo 'Sclass' sudah diperbaiki di sini) -->
+                <a href="#" class="text-gray-700 hover:bg-green-100 border-l-4 border-green-500 block pl-3 pr-4 py-2 text-base font-medium transition-colors duration-200">Bahasa Inggris</a>
+                <a href="#" class="text-gray-700 hover:bg-yellow-100 border-l-4 border-yellow-500 block pl-3 pr-4 py-2 text-base font-medium transition-colors duration-200">Pendidikan Pancasila</a>
+                <a href="#" class="text-gray-700 hover:bg-pink-100 border-l-4 border-pink-500 block pl-3 pr-4 py-2 text-base font-medium transition-colors duration-200">Seni Budaya</a>
+                
+                <!-- Link Aktif (Halaman Saat Ini) -->
+                <a href="index.html" class="bg-purple-100 text-purple-700 border-l-4 border-purple-600 block pl-3 pr-4 py-2 text-base font-medium font-bold" aria-current="page">IPAS</a>
+                
+            </div>
+        </div>
+    </nav>
+    <!-- ===== AKHIR DARI MENU NAVIGASI BARU ===== -->
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+
+        <!-- Bagian Header -->
+        <header class="text-center mb-10 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 gradient-text">
+                Halo, Penjelajah Cilik!
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-700 font-medium">
+                Selamat Datang di Peta Belajar IPAS Kelas 6
+            </p>
+        </header>
+
+        <!-- Konten Utama: Daftar Bab dalam bentuk Grid -->
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+            <!-- ... (Seluruh 8 Kartu Bab tidak berubah) ... -->
+
+            <!-- Kartu Bab 1 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <!-- Gambar/Icon Bab -->
+                <img src="https://placehold.co/600x400/3498DB/FFFFFF?text=Bab+1" alt="Ilustrasi Bab 1" class="w-full h-48 object-cover">
+                
+                <!-- Konten Teks Bab -->
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 1: Bagaimana Tubuh Kita Bergerak?</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Ayo pelajari apa yang membuat kita bisa berlari, melompat, dan menari!
+                    </p>
+                    
+                    <!-- Daftar Sub-bab (Link Aktif) -->
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab1a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-blue-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Rangka, Sendi, dan Otot
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab1b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-blue-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Menjaga Kesehatan Rangka
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab1c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-blue-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Rangka Manusia dan Hewan
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tombol Aksi -->
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-blue-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-blue-700 shadow-md shadow-blue-500/30 hover:shadow-lg hover:shadow-blue-500/40">
+                        Mulai Belajar Bab 1
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 2 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/E67E22/FFFFFF?text=Bab+2" alt="Ilustrasi Bab 2" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 2: Perjalanan Makanan</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Nyam! Ke mana perginya makanan setelah kita kunyah? Kita telusuri!
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab2a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-orange-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-orange-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Sistem Pencernaan Manusia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab2b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-orange-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-orange-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Makanan Bergizi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab2c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-orange-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-orange-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Menjaga Kesehatan Sistem Pencernaan
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-orange-500 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-orange-600 shadow-md shadow-orange-500/30 hover:shadow-lg hover:shadow-orange-500/40">
+                        Ayo Cek Bab 2!
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 3 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/FFC107/FFFFFF?text=Bab+3" alt="Ilustrasi Bab 3" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 3: Energi dan Perubahannya</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Listrik, panas, gerak... Temukan kekuatan super di sekitar kita!
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab3a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-yellow-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Macam-Macam Energi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab3b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-yellow-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Perubahan Bentuk Energi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab3c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-yellow-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Energi Alternatif
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-yellow-500 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-yellow-600 shadow-md shadow-yellow-500/30 hover:shadow-lg hover:shadow-yellow-500/40">
+                        Cari Tahu Bab 3
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 4 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/E74C3C/FFFFFF?text=Bab+4" alt="Ilustrasi Bab 4" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 4: Waspada Bencana</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Gempa bumi? Banjir? Jangan panik! Kita belajar agar selalu siap.
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab4a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-red-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Mengenal Jenis Bencana Alam
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab4b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-red-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Sebelum, Saat, dan Sesudah Bencana
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab4c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-red-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Menjaga Diri dari Bencana
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-red-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-red-700 shadow-md shadow-red-500/30 hover:shadow-lg hover:shadow-red-500/40">
+                        Jelajahi Bab 4!
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 5 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/9B59B6/FFFFFF?text=Bab+5" alt="Ilustrasi Bab 5" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 5: Cerita tentang Indonesia</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Dari Sabang sampai Merauke, kenali kekayaan alam dan budaya kita.
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab5a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-purple-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-purple-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Kenampakan Alam Indonesia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab5b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-purple-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-purple-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Keragaman Budaya Indonesia
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab5c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-purple-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-purple-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Pahlawan Nasional
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-purple-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-purple-700 shadow-md shadow-purple-500/30 hover:shadow-lg hover:shadow-purple-500/40">
+                        Kenali Bab 5
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 6 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/1ABC9C/FFFFFF?text=Bab+6" alt="Ilustrasi Bab 6" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 6: Indonesia dan Dunia</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Bagaimana negara kita berteman dan bekerja sama dengan negara lain?
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab6a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-teal-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-teal-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Indonesia di Lingkup ASEAN
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab6b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-teal-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-teal-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Ekspor dan Impor
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab6c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-teal-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-teal-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Dampak Globalisasi
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-teal-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-teal-700 shadow-md shadow-teal-500/30 hover:shadow-lg hover:shadow-teal-500/40">
+                        Lihat Bab 6
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 7 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/F39C12/FFFFFF?text=Bab+7" alt="Ilustrasi Bab 7" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 7: Proyek Wirausaha</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Punya ide bisnis? Ayo belajar jadi pengusaha cilik yang kreatif!
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab7a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-amber-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-amber-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Ide Usaha
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab7b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-amber-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-amber-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Produksi dan Pemasaran Sederhana
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab7c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-amber-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-amber-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Menghitung Untung Rugi
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-amber-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-amber-700 shadow-md shadow-amber-500/30 hover:shadow-lg hover:shadow-amber-500/40">
+                        Mulai Proyek! (Bab 7)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kartu Bab 8 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src="https://placehold.co/600x400/27AE60/FFFFFF?text=Bab+8" alt="Ilustrasi Bab 8" class="w-full h-48 object-cover">
+                <div class="p-6 flex-grow">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Bab 8: Menjaga Kelestarian Lingkungan</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Bumi kita butuh bantuan! Mari jadi pahlawan penjaga lingkungan.
+                    </p>
+                    <h3 class="font-semibold text-gray-700 mb-2">Apa saja yang dipelajari?</h3>
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#bab8a" class="flex items-center text-gray-700 transition-all duration-200 hover:text-green-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                A. Masalah Lingkungan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab8b" class="flex items-center text-gray-700 transition-all duration-200 hover:text-green-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                B. Konservasi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bab8c" class="flex items-center text-gray-700 transition-all duration-200 hover:text-green-600 hover:translate-x-1 py-1">
+                                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                C. Aksi Peduli Lingkungan
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 pt-0">
+                    <button class="w-full bg-green-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300 hover:bg-green-700 shadow-md shadow-green-500/30 hover:shadow-lg hover:shadow-green-500/40">
+                        Jaga Bumi! (Bab 8)
+                    </button>
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- Footer Sederhana -->
+        <footer class="text-center mt-12 text-gray-500">
+            <p>&copy; 2025 Modul Pembelajaran IPAS Kelas 6. Dibuat dengan ❤️.</p>
+        </footer>
+
+    </div>
+
+    <!-- ===== SKRIP JAVASCRIPT UNTUK MENU MOBILE ===== -->
+    <script>
+        // ... (Skrip JavaScript tidak berubah) ...
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = menuButton.querySelector('svg:nth-child(1)'); // Ikon hamburger
+        const closeIcon = menuButton.querySelector('svg:nth-child(2)'); // Ikon X
+
+        menuButton.addEventListener('click', () => {
+            // Toggle (tampilkan/sembunyikan) menu dropdown
+            mobileMenu.classList.toggle('hidden');
+            
+            // Ganti ikon hamburger dengan X, dan sebaliknya
+            hamburgerIcon.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('block');
+            closeIcon.classList.toggle('hidden');
+            closeIcon.toggle('block');
+
+            // Update status aria-expanded untuk aksesibilitas
+            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+            menuButton.setAttribute('aria-expanded', isExpanded);
+        });
+    </script>
+    <!-- ===== AKHIR DARI SKRIP JAVASCRIPT ===== -->
+
+</body>
+</html>
